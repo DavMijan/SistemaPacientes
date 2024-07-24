@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,3 +17,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::resource('pacientes', PacienteController::class);
+Route::resource('users', UserController::class);
